@@ -1,0 +1,126 @@
+@import "../colors.scss";
+
+
+.navbar {
+    height: 50px; 
+    width: 100%;
+    display: flex;
+   
+    .nav {  
+        display: flex;
+        height: 50px;
+        position: relative;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow:   0 0 10px rgba(0,0,0,0.2);
+        color: #fff;
+        position: fixed;
+        padding-top: 10px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        z-index: 9999;
+        &--visible {
+            background-color: $secondary-color;
+            color: #000;
+        }
+        &--hidden {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+    .logo {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100px;
+        margin: auto;
+        height: 50px;
+        img {
+            transition: all 0.3s ease;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .hamburger {
+        button {
+            text-decoration: none;
+            border: none;
+            backdrop-filter:   blur(10px);
+            box-shadow:   0 0 10px rgba(0,0,0,0.2);
+            border-radius: 10%;
+            background-color: $secondary-color;
+            color: black;
+            font-size: 1rem;
+        }
+    }
+    .ham-menu {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        max-height: 200px;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        align-items: center;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        box-shadow:   0 12px 12px rgba(0,0,0,0.1);
+        &--visible {
+            background-color: $secondary-color;
+            max-height: 500px;
+            backdrop-filter:  blur(10px);
+            transition: max-height 0.5s ease-in-out;
+        }
+        &--hidden {
+            max-height: 0px;
+            transition: all 0.3s ease-out;
+        
+        }
+        .menu-items {
+            transition: all 0.3s ease-in-out;
+            margin: 10px;
+            
+        }
+        button {
+            text-decoration: none;
+            border: none;
+            backdrop-filter:   blur(10px);
+            box-shadow:   0 0 10px rgba(0,0,0,0.2);
+            border-radius: 10%;
+            background-color: $secondary-color;
+            color: black;
+            font-size: 0.8rem;
+        }
+  
+    }
+    .menu {
+        display: flex;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        gap: 10px;
+        padding: 0 20px;
+        transition: all 0.3s ease-in-out;
+     
+        &--visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        &--hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
