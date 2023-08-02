@@ -1,0 +1,84 @@
+@import 'variables';
+
+%loading-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+%centered-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+%centered-content {
+    padding: 3rem 0 3rem;
+    text-align: center;
+    max-width: 65%;
+    margin: auto;
+}
+
+%brown-container {
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    background-color: $primary;
+}
+
+%banner-content {
+    text-align: center;
+    padding: 5rem;
+
+    h1 {
+        font-size: $headline;
+        color: $primary;
+    }
+    
+    p {
+        font-size: $big;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    link {
+        text-decoration: none;
+    }
+}
+
+
+%form {
+    appearance: none;
+    background-color: $white;
+    border: .06rem solid $gray-300;
+    border-radius: 0.2rem;
+    font-size: $medium;
+    font-weight: 400;
+    height: 3rem;
+    line-height: normal;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    width: 100%;
+    transition: 0.2s;
+
+    &:hover {
+        border: .06rem solid $secondary;
+    }
+
+    &:focus {
+        border: none;
+        outline: 0.13rem solid $primary;
+    }
+}
+
+%box-shadow {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+}
+
+%error {
+    color: $danger;
+    font-size: $tiny;
+    margin-top: 0.3rem;
+}

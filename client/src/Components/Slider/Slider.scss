@@ -1,66 +1,179 @@
-.auto-slider {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    margin-bottom: 40px;
-    img {
-        object-fit: cover;
-        transition: all 0.3s ease;
-        width: 100%;
-        height: 500px;
-        margin: auto;
-        transition: background-color 0.3s ease-in-out;
-    }
-    .slider-indicator {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      
-      .indicator-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: gray;
-        margin: 0 5px;
-        transition: background-color 0.3s ease-in-out;
-      }
-      
-      .indicator-dot.active {
-        // width: 20px;
-        border-radius: 50%;
-        // height: 14px;
-        background-color: white;
-      }
-    .slider-button {
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        display: flex;
-        flex-direction: row;
-        gap: 20vw;
-        
-        transform: translate(-50%, -50%);
-        button {
-            padding: 10px 40px;
-            border: none;
-            background-color: white;
-            color: black;
-            border-radius: 6px;
-            box-shadow:   0 0 10px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
 
-            &:hover {
-                background-color: black;
-                color: white;
-                box-shadow:   0 0 10px rgba(0,0,0,0.5);
-            }
-        }
-    }
-    
+.slider {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 15;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	animation: slideDown 2s;
+	height: 30%;
+
+	
+
+	@keyframes slideDown {
+		from {
+			margin-top: -100%;
+		}
+
+		to {
+			margin-top: 0%;
+		}
+	}
+
+	.slide {
+		display: none;
+		@include fadeIn(2s, alternate);
+		z-index: 10;
+	}
+
+	.current.slide {
+		display: block;
+		opacity: 1;
+		width: 100vw;
+		height: calc(100vw * 9.2 / 32);
+		z-index: 10;
+		img {
+			width: 100%;
+			align-items: start;
+			justify-content: start;
+			height: 100%;
+			object-fit: cover;
+			object-position: 40% 20%;
+			position: absolute;
+		}
+
+		.landscape {
+			display: block;
+			width: 100%;
+			max-height: 100%;
+		}
+
+		.square {
+			display: none;
+		}
+
+		.dots {
+			display: flex;
+			height: 3.5rem;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+
+			.slider-dot {
+				background: $primary;
+				opacity: 0.25;
+				height: 0.65rem;
+				width: 0.65rem;
+				margin: 5px;
+				border-radius: 20px;
+				position: relative;
+				border: none;
+				cursor: pointer;
+
+				&:hover {
+					opacity: 0.75;
+				}
+			}
+
+			.slider-dot.active {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	.arrow-container {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 0.75rem;
+		z-index: 50;
+
+		.arrow-left {
+			animation: slideLeft 1.5s;
+			cursor: pointer;
+
+			@keyframes slideLeft {
+				from {
+					margin-left: -100%;
+				}
+
+				to {
+					margin-left: 0%;
+				}
+			}
+		}
+
+		.arrow-right {
+			animation: slideRight 1.5s;
+			cursor: pointer;
+
+			@keyframes slideRight {
+				from {
+					margin-right: -100%;
+				}
+
+				to {
+					margin-right: 0%;
+				}
+			}
+		}
+
+		button {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 2rem;
+			width: 2rem;
+			background-color: $primary;
+			opacity: 0.5;
+			border-radius: 100px;
+			border: none;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 0.25;
+			}
+		}
+
+		i {
+			font-size: $small;
+			color: $white;
+			align-self: center;
+		}
+	}
+}
+
+@media screen and (max-width: $smaller-screen) {
+	.slider {
+		.current.slide {
+			height: 100vw;
+
+			.landscape {
+				display: none;
+			}
+
+			.square {
+				display: block;
+				width: 100%;
+				max-height: 100%;
+			}
+
+			.dots {
+				height: 4.5rem;
+			}
+		}
+	}
 }

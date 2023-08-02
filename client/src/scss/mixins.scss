@@ -1,0 +1,103 @@
+@mixin background-cover($src) {
+    max-width: 100vw;
+    display: block;
+    background: url($src) no-repeat center center;
+    background-size: cover;
+}
+
+@mixin page-header($color, $background) {
+    @extend %centered-column;
+    margin-top: 4.5rem;
+    text-align: center;
+    width: 100%;
+    height: 10.4rem;
+    color: $color;
+    background-color: $background;
+    
+    h1 {
+        font-size: $largeTitle;
+        padding: 2.5rem;
+    }
+}
+
+// ANIMATIONS
+@mixin slideDown($direction, $fadeTime, $slideTime) {
+    animation: fadeIn $fadeTime $direction,
+    slideDown $slideTime cubic-bezier(.3,1,.3,1.3) $direction; 
+
+    @keyframes slideDown {
+        from { transform: translate3d(0, -2rem, 0); }
+        to { transform: translate3d(0); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; visibility: visible; }
+    }
+}
+
+@mixin fadeIn($time, $direction) {
+    animation: fadeIn $time $direction;
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; visibility: visible; }
+    }
+}
+
+// FORM
+@mixin button($color, $background, $border) {
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    font-size: $medium;
+    font-weight: bold;
+    border-radius: 1.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: $color;
+    color: $background;
+    border: $border solid $primary;
+    transition: .5s;
+    height: 3rem;
+
+    &:hover {
+        background-color: $secondary;
+        color: $white;
+        border: $border solid $secondary;
+    }
+}
+
+@mixin form-component($position) {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    position: $position;
+    
+    label {
+        color: $primary;
+        font-size: $medium;
+        font-weight: bold;
+    }
+    
+    span {
+        color: $danger;
+        font-size: $medium;
+        font-weight: bold;
+    }
+
+    p {
+        @extend %error;
+    }
+
+    input {
+        @extend %form;
+    }
+
+    select {
+        @extend %form;
+    }
+
+    textarea {
+        @extend %form;
+        height: 100%;
+    }
+}

@@ -1,23 +1,89 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import SyncLoader from "react-spinners/SyncLoader";
 import './Home.scss'
-import AutoSlider from '../../Components/Slider/Slider'
-import Card from '../../Components/Card/Card'
+
+import Slider from '../../Components/Slider/Slider';
+import { sliderData } from '../../data/sliderData';
+import Panel from '../../Components/Panel/Panel';
+import Banner from '../../components/Banner/Banner';
+import Card from '../../components/Card/Card';
+
+
+import coffeePlant from '../../assets/photos/coffee-plant.jpg';
+import chStore from '../../assets/photos/ch-store-facade.jpg';
+import coffeeQuiz from '../../assets/photos/coffee-beverage.jpg';
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
+  const [showTag, setShowTag] = useState(false);
 
-    const images = [
-    'https://cdn.exoticindia.com/images/products/original/paintings-2019/wsa972.jpg',
-    'https://www.skillshare.com/blog/wp-content/uploads/2022/07/resin-flower-coaster-min.jpg',
-    'https://www.skillshare.com/blog/wp-content/uploads/2022/07/resin-flower-coaster-min.jpg',
-    'https://static.wixstatic.com/media/ce985f_a262961d25884238867a7129c1665260~mv2.jpg/v1/fill/w_1136,h_1102,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ce985f_a262961d25884238867a7129c1665260~mv2.jpg',
-    // Add more image URLs as needed
-  ];
+  // To Show Loading
+  useEffect(() => {
+    const pageLoader = setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+    return () => clearTimeout(pageLoader);
+  }, []);
+  
+
+
+  // To Show Banner
+  const onScroll = useCallback(() => {
+    if (window.scrollY > 2000) {
+      setShowTag(true);
+    }
+  }, []);
+  
+  useEffect(() => { 
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  });
+
+
   return (
-    <div className='home'>
-      <AutoSlider images={images} />
-      <Card buttonTitle='Register' image='https://cdn.exoticindia.com/images/products/original/paintings-2019/wsa972.jpg' price='$10' pagePath = "/registration"  />
+    <div className="home">
+      {loading ? <div className='loading-container'>
+        <SyncLoader
+          color={'#b69861'}
+          loading={loading}
+          size={13}
+          margin={8}
+        />
+      </div> : <>
+        <Slider slides={sliderData} /></>}
+      {
+        showTag && <Link to='/contact' className='tag-link' />
+      }
+      <div className="bottom-container">
+        <Panel />
+        <Banner
+          title="Our Story"
+          subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+          to='/impact'
+          buttonText="Learn More"
+          image={coffeePlant}
+        />
+        <div className="card-wrapper">
+          <Card
+            title='Visit us'
+            subtitle='Enjoy freshly roasted coffee and great food today.'
+            to='/stores'
+            buttonText='Find a store'
+            image={chStore}
+          />
+          <Card
+            title='Coffee Quiz'
+            subtitle='How much do you know about this vital brew?'
+            to='/quiz'
+            buttonText='Take the quiz'
+            image={coffeeQuiz}
+          />
+        </div>
+
+      </div>
     </div>
-  )
+  );
 }
 
 export default Home

@@ -1,2 +1,81 @@
-.home {
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
+.home { 
+    position: relative;
+    margin-top: 4.5rem;
+
+    .loading-container {
+        @extend %loading-container;
+    }
+
+    .bottom-container {
+        width: 100%;
+        @include fadeIn(2.2s, alternate);
+    }
+
+    .tag-container {
+        display: block;
+        position: fixed;
+        animation: slideRight 1s;     
+        right: -2.5rem;
+        top: 45%;
+        border-radius: 0.25rem;
+        background-color: $secondary;
+        padding: 0.7rem 1.5rem;
+        transform: rotate(90deg);
+        z-index: 50;
+        @extend %box-shadow;
+
+    .tag-link {
+        text-decoration: none;
+
+        p {
+            font-size: $large;
+            color: $white;
+            transition: 0.2s;
+        
+                &:hover {
+                    color: $tertiary;
+                }
+            }
+        }
+    }
+
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    @keyframes slideRight {
+        from {
+        margin-right: -100%;
+        }
+
+        to {
+        margin-right: 0%;
+        }
+        }
+
+    @keyframes slideRightOut {
+        from {
+            margin-right: 2%;
+        }
+
+        to {
+            margin-right: -100%;
+        }
+    }
+}
+
+@media screen and (max-width: $large-screen) {   
+    .home {  
+        .card-wrapper {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0;
+        }
+    }    
 }

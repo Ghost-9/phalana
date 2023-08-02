@@ -1,0 +1,119 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
+
+.order {
+    align-items: center;
+    text-align: center;
+    padding: 3.5rem 4rem 4rem;
+  
+    .title {
+        font-size: $headline;
+        color: $primary;
+
+        &:after {
+            display: block;
+            content: "";
+            height: 0.1rem;
+            width: 20rem;
+            background-color: $secondary;
+            margin: 1rem auto;
+        }
+    }
+
+    .text {
+        font-size: $medium;
+        padding-bottom: 3rem;
+        color: $gray-200;
+    }
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+    
+    .card {
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+  
+        h1 {
+            font-size: $subheadline;
+            padding-top: 1rem;
+        }
+        
+        p {
+            font-size: $medium;
+            padding-top: 0.5rem;
+            color: $gray-200;
+        }
+        
+        i {
+            color: $primary;
+        }
+            }
+  }
+  
+  @media screen and (max-width: $large-screen) {
+    .order {
+      padding: 2.5rem 1rem;
+
+      .cards {
+        gap: 0;
+
+        .card {
+            display: flex;
+            align-items: flex-end;
+            text-align: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0rem 2rem;
+            width: 100%;
+          }
+        
+          h1 {
+            font-size: $big;
+            padding-left: 1rem;
+            padding-top: 0;
+          }
+        
+          p {
+            display: none;
+          }
+        
+          .fa-mug-hot {
+            padding-bottom: 0.2rem;
+          }
+      }
+    }    
+  }
+  
+@media screen and (max-width: $medium-screen) {
+    .order {
+        .cards {
+            display: block;
+        
+            .card {
+                margin: 0rem 1rem;
+                padding: 0.5rem 0rem;
+                width: 100%;
+            
+                h1 {
+                    padding-right: 5rem;
+                }
+            
+                .fa-car {
+                    padding-left: 1.9rem;
+                }
+            
+                .fa-mug-hot {
+                    padding-left: 0.8rem;
+                    padding-bottom: 0rem;
+                }
+            }
+        }
+    }
+}

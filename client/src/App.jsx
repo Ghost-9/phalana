@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import {Outlet, RouterProvider,createBrowserRouter } from 'react-router-dom'
-import Navbar from './Navbar/Navbar'
+import './scss/app.scss'
+
+// Routes
+import Header from './Header/Header'
 import Home from './Pages/Home/Home'
-import RegistrationForm from './Components/Form/Registration'
-import './App.scss'
+import RegistrationForm from './components/Form/Registration'
+import Footer from './Footer/Footer'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const Layout = () => { 
     return (
       <div className='app'>
-        <Navbar/>
+        <Header/>
         <Outlet />
+        <Footer/>
       </div>
     )
   }
@@ -32,9 +33,14 @@ function App() {
         {
           path: '/registration',
           element: <RegistrationForm />,
-        }
+        },
       ]
     },
+        {
+          path: '*',
+          element: <RegistrationForm/>,
+        }
+   
   ])
 
 

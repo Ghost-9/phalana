@@ -1,0 +1,11 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
+.brown-button {
+    @include button($primary, $white, 0);
+}
+  
+.phantom-button {
+    @include button(none, $primary, 0.1rem);
+}
