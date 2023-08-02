@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './Registration.scss';
+
+
  const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [numOfAttendees, setNumOfAttendees] = useState(0);
