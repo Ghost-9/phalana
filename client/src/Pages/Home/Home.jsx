@@ -4,7 +4,7 @@ import SyncLoader from "react-spinners/SyncLoader";
 import './Home.scss'
 
 import Slider from '../../Components/Slider/Slider.jsx';
-import { sliderData } from '../../data/sliderData.jsx';
+import { sliderData } from '../../data/sliderData.js';
 import Panel from '../../Components/Panel/Panel.jsx';
 import Banner from '../../components/Banner/Banner.jsx';
 import Card from '../../components/Card/Card.jsx';

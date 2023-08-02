@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/head_logo.png'
+import logo from '../assets/head_logo.png';
 
-import './Header.scss'
-import Icon from '../components/Icon/Icon.jsx';
-import Dropdown from '../components/Dropdown/Dropdown.jsx';
+import './Header.scss';
+import Icon from '../components/Icon/Icon';
+import Dropdown from '../components/Dropdown/Dropdown';
 
 const Header = () => {
 

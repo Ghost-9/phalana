@@ -1,11 +1,11 @@
-import {Outlet, RouterProvider,createBrowserRouter } from 'react-router-dom'
-import './scss/app.scss'
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './scss/app.scss';
 
 // Routes
-import Header from './Header/Header'
-import Home from './Pages/Home/Home'
+import Header from './Header/Header';
+import Home from './Pages/Home/Home';
 // import RegistrationForm from './components/Form/Registration.jsx'
-import Footer from './Footer/Footer'
+import Footer from './Footer/Footer';
 
 
 function App() {
