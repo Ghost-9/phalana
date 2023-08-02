@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/head_logo.png'
 
 import './Header.scss'
-import Icon from '../components/Icon/Icon';
+import Icon from '../components/Icon/Icon.jsx';
 import Dropdown from '../components/Dropdown/Dropdown';
 
 const Header = () => {
