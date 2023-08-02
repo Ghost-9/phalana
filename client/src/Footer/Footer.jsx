@@ -73,7 +73,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { socialMedia } from '../../src/data/socialMedia';
-import Icon from '../components/Icon/Icon.jsx';
+import CustomIcon from '../components/Icon/Icon.jsx';
 import './Footer.scss'
 
 const Footer = () => {
@@ -90,7 +90,7 @@ const Footer = () => {
         {socialMedia.map((item, index) => {
           return (
             <a key={index} href={item.link} target='_blank' rel='noreferrer'>
-              <Icon
+              <CustomIcon
                 className={item.icon}
                 hoverColor='$secondary'
                 size='1.5rem'

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 
-const Icon = ({className, size, color, hoverColor, width, height, cursor,onClick }) => {
+const CustomIcon = ({className, size, color, hoverColor, width, height, cursor,onClick }) => {
     const [fill, setFill] = useState(color);
     return (
         <div>
@@ -19,7 +19,7 @@ const Icon = ({className, size, color, hoverColor, width, height, cursor,onClick
     );
 }
 
-Icon.propTypes = {
+CustomIcon.propTypes = {
     className: PropTypes.string,
     size: PropTypes.string,
     color: PropTypes.string,
@@ -30,7 +30,7 @@ Icon.propTypes = {
     onClick: PropTypes.func,
 }
 
-Icon.defaultProps = {
+CustomIcon.defaultProps = {
     className: '',
     size: '',
     hoverColor: 'none',
@@ -39,4 +39,4 @@ Icon.defaultProps = {
     cursor: ''
 }
 
-export default Icon;
+export default CustomIcon;
