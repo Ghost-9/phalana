@@ -6,7 +6,7 @@ import './Home.scss'
 import Slider from '../../Components/Slider/Slider.jsx';
 import { sliderData } from '../../data/sliderData.js';
 import Panel from '../../Components/Panel/Panel.jsx';
-import Banner from '../../components/Banner/Banner.jsx';
+import CustomBanner from '../../components/Banner/Banner.jsx';
 import Card from '../../components/Card/Card.jsx';
 
 
@@ -57,7 +57,7 @@ const Home = () => {
       }
       <div className="bottom-container">
         <Panel />
-        <Banner
+        <CustomBanner
           title="Our Story"
           subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
           to='/impact'
