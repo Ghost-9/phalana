@@ -4,7 +4,7 @@ import logo from '../assets/head_logo.png'
 
 import './Header.scss'
 import Icon from '../components/Icon/Icon.jsx';
-import Dropdown from '../components/Dropdown/Dropdown';
+import Dropdown from '../components/Dropdown/Dropdown.jsx';
 
 const Header = () => {
 

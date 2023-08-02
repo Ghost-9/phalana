@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import "./Card.scss";
 
-import Button from "../Button/Button";
+import Button from "../Button/Button.jsx";
 
 
 const Card = ({title, subtitle, to, buttonText, image }) => {

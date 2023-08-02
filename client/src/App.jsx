@@ -4,7 +4,7 @@ import './scss/app.scss'
 // Routes
 import Header from './Header/Header'
 import Home from './Pages/Home/Home'
-// import RegistrationForm from './components/Form/Registration'
+import RegistrationForm from './components/Form/Registration.jsx'
 import Footer from './Footer/Footer'
 
 
@@ -32,13 +32,13 @@ function App() {
         },
         {
           path: '/registration',
-          element: <Home />,
+          element: <RegistrationForm />,
         },
       ]
     },
         {
           path: '*',
-          element: <Home/>,
+          element: <RegistrationForm/>,
         }
    
   ])

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Banner.scss';
 
-import Button from '../Button/Button';
+import Button from '../Button/Button.jsx';
 
 const Banner = ({ title, subtitle, to, buttonText, image, right, marginBottom }) => {
     return (
