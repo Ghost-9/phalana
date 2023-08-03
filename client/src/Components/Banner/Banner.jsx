@@ -5,7 +5,7 @@ import './Banner.scss';
 
 import Button from '../Button/Button.jsx';
 
-const Banner = ({ title, subtitle, to, buttonText, image, right, marginBottom }) => {
+const Banner = ({ title, subtitle, to, buttonText, image, right, marginBottom, subtitleSub }) => {
     return (
         <div className="banner" style={{ marginBottom: marginBottom }}>
             {
@@ -17,6 +17,7 @@ const Banner = ({ title, subtitle, to, buttonText, image, right, marginBottom })
             <div className='content'>
                 <h1>{title}</h1>
                 <p>{subtitle}</p>
+                {subtitleSub && <p>{subtitleSub}</p>}
                 <Link to={to}>
                     <Button text={buttonText} />
                 </Link>
@@ -41,6 +42,7 @@ Banner.propTypes = {
     image: PropTypes.string,
     right: PropTypes.bool,
     marginBottom: PropTypes.string,
+    subtitleSub: PropTypes.string,
 };
 
 

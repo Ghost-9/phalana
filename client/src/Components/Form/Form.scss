@@ -1,0 +1,106 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
+
+.form {
+    @extend %centered-column;
+    width: 100%;
+    padding: 0 auto;
+
+    form {
+        width: 60%;
+
+        .form-row {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        .input {
+            @include form-component(static);
+        }
+    
+        .select {
+            @include form-component(relative);
+            label:before {
+                content: '';
+                pointer-events: none;
+                position: absolute;
+                top: 3.15rem;
+                right: 1rem;
+                border-left: 0.35rem solid transparent;
+                border-right: 0.35rem solid transparent;
+                border-top: 0.35rem solid $primary;
+
+                &:focus {
+                    border-top: 0.35rem solid $secondary;
+                }
+            }
+        }
+        
+        .textarea {
+            @include form-component(static);
+            .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                
+                p {
+                    color: $gray-200;
+                    font-size: $tiny;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-screen) {
+    .form {    
+        form {
+            width: 70%;
+    
+            .form-row {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+    
+            .input {
+                @include form-component(static);
+            }
+        
+            .select {
+                @include form-component(relative);
+                label:before {
+                    content: '';
+                    pointer-events: none;
+                    position: absolute;
+                    top: 3.15rem;
+                    right: 1rem;
+                    border-left: 0.35rem solid transparent;
+                    border-right: 0.35rem solid transparent;
+                    border-top: 0.35rem solid $primary;
+    
+                    &:focus {
+                        border-top: 0.35rem solid $secondary;
+                    }
+                }
+            }
+            
+            .textarea {
+                @include form-component(static);
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    p {
+                        color: $gray-200;
+                        font-size: $tiny;
+                    }
+                }
+            }
+        }
+    }
+  }

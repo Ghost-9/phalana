@@ -5,7 +5,7 @@ import './Panel.scss'
 const Panel = () => {
     return (
         <div className='order'>
-            <h1 className='title'>Ways to Register</h1>
+            <h1 className='title'>Things to Explore</h1>
             <p className='text'>Tell us what you want to make in this resin art experience.</p>
             <div className='cards'>
                 <div className='card'>
