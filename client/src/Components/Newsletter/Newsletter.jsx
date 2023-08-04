@@ -1,7 +1,7 @@
 import {useState, useCallback} from 'react'
 import './Newsletter.scss'
 
-import Icon from '../Icon/Icon.jsx';
+import CustomIcon from '../Icon/Icon.jsx';
 import SignUp from './Signup/Signup.jsx';
 
 const Newsletter = () => {
@@ -38,7 +38,7 @@ const Newsletter = () => {
             : (
             <div className='subscribe-container submitted'>
                 <div className='subscribe-column'>                    
-                    <Icon
+                    <CustomIcon
                         className='fas fa-envelope'
                         size='3.5rem'                 
                     />

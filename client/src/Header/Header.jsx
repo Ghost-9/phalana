@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/head_logo.png';
 
 import './Header.scss';
-import Icon from '../components/Icon/Icon.jsx';
+import CustomIcon from '../components/Icon/Icon.jsx';
 import Dropdown from '../components/Dropdown/Dropdown.jsx';
 
 const Header = () => {
@@ -94,7 +94,7 @@ const Header = () => {
                 className='nav-link'
                 onClick={() => setMobileMenu(onClose)}
               >
-                <Icon
+                <CustomIcon
                   className='fas fa-map-marker-alt'
                 />
               </Link>
