@@ -1,0 +1,83 @@
+
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
+@import '../../scss/extends.scss';
+
+
+.dropdown.closed {
+    display: none;
+  }
+  
+  .dropdown {
+    top: 4.5rem;
+    right: 4rem;
+    height: 10.4rem;
+    flex-direction: column;
+    position: absolute;
+    background-color: $primary;
+    border-radius: 0.5rem;
+    padding: 1.2rem 3rem 1.7rem 1.7rem;
+    z-index: 101;
+    @include slideDown(alternate, .3s, .5s);
+
+    li {
+        list-style: none;
+        cursor: pointer;
+        transition: 0.5s;
+        line-height: 2.5rem;
+        @include slideDown(forwards, .3s, .5s);
+
+        .dropdown-link {
+            font-size: $medium;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            color: $white;
+        
+              &:hover {
+                color: $tertiary;
+              }
+        }
+    }
+    
+    &:after {
+        position: absolute;
+        content: "";
+        border-style: solid;
+        border-width: 0px 0.6rem 0.6rem;
+        border-color: transparent transparent $primary;
+        top: 1px;
+        left: 50%;
+        transform: translateY(-100%) translateX(-50%);
+    }
+
+}
+
+@media screen and (max-width: $medium-screen) {
+    .dropdown {    
+        top: 0;
+        right: 0;
+        position: relative;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 2rem 0 0.5rem 1rem;
+        margin-bottom: 2rem;
+        border-top: 0.1rem solid $white;
+        @include slideDown(alternate, .3s, .5s);
+
+        li {
+            line-height: 1.2rem;
+            @include slideDown(forwards, .3s, .5s);
+
+            .dropdown-link {
+                font-size: $large;
+                padding-bottom: 2rem;  
+            }
+        }
+    
+        &:after {
+            display: none;
+        }
+    }   
+}
+  

@@ -1,0 +1,43 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
+
+.banner {
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    min-height: 100%;
+    margin: 0 auto 0;
+
+    width: 100%;
+    background-color: $gray-100;
+    @include fadeIn(1s, alternate);
+
+  
+    .content {
+        p {
+            white-space: pre-wrap;
+        }
+        @extend %banner-content;
+    }
+}
+
+  
+@media screen and (max-width: $large-screen) {   
+    .banner {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    
+        .content {
+            padding: 4rem 2rem 4rem; 
+
+            h1 {
+                width: 70%;                
+                margin: 0 auto;
+                text-align: center;   
+            }
+        }
+    }    
+}
+  

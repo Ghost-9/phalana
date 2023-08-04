@@ -1,0 +1,41 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/extends.scss';
+
+.card-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin: 2rem auto 2rem;
+  width: 100%;
+  overflow: hidden;
+  background-color: $gray-100;
+  @include fadeIn(1s, alternate);
+
+  &:hover .image {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+    .image {
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
+  }
+
+  .content {
+      @extend %banner-content;
+      button {
+        @include button($primary, $white, 0px);
+      }
+  
+  }
+}
+
+@media screen and (max-width: $large-screen) {   
+  .card-container {
+      margin: 0 auto 2rem;
+
+      .content {
+          padding: 3.5rem;
+      }
+  }    
+}
+
