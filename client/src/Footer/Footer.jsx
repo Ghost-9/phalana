@@ -73,7 +73,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { socialMedia } from '../../src/data/socialMedia';
-import Icon from '../components/Icon/Icon.jsx';
+import Icon from '../components/Icon/Icon';
 import './Footer.scss'
 
 const Footer = () => {
