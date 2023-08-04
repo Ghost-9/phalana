@@ -6,7 +6,7 @@ import './Home.scss'
 import Slider from '../../Components/Slider/Slider.jsx';
 import { sliderData } from '../../data/sliderData.js';
 import Panel from '../../Components/Panel/Panel.jsx';
-import CustomBanner from '../../components/Banner/Banner.jsx';
+import Banner from '../../components/Banner/Banner.jsx';
 import Card from '../../components/Card/Card.jsx';
 import Newsletter from '../../components/Newsletter/Newsletter';
 
@@ -66,7 +66,7 @@ const Home = () => {
         }
         <div className="bottom-container">
           <Panel />
-          <CustomBanner
+          <Banner
             title="What We Do"
             subtitle="We are all about experiences♥️. An experience where we engage, participate and allow ourselves to immerse in the creative process."
             subtitleSub="An Experience that enable us to connect with emotions, gain new perspective and foster creativity and imagination."
