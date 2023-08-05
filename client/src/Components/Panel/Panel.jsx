@@ -9,12 +9,12 @@ const Panel = () => {
             <p className='text'>What you will get to experience in this workshop.</p>
             <div className='cards'>
                 <div className='card'>
-                    <i className='fas fa-car fa-2x'></i>
+                    <i className='fas fa-solid fa-brush fa-2x'></i>
                     <h1>Tea Coasters Art</h1>
                     <p>Tea coaster set with beautiful resin art!</p>
                 </div>
                 <div className='card'>
-                    <i className='fas fa-mug-hot fa-2x'></i>
+                    <i className='fas fa-solid fa-palette fa-2x'></i>
                     <h1>Mirror Art</h1>
                     <p>Mirror Resin Art</p>
                 </div>
