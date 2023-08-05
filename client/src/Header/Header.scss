@@ -25,6 +25,7 @@
 
             .logo {
                 height: 8rem;
+                width: 10rem;
                 object-fit: contain;
                 padding-right: 2rem;
                 position: absolute;
@@ -34,6 +35,17 @@
 
             .menu-icon {
                 display: block;
+                align-self: center;
+                align-items: center;
+                justify-content: center;
+                color: $primary;
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(-100%, 100%);
             }
 
             .nav-list {

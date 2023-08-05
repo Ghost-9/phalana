@@ -53,7 +53,7 @@ const Home = () => {
           margin={8}
         />
       </div> : <>
-      <video autoPlay loop className='video'>
+      <video autoPlay loop muted playsInline className='video'>
         <source src={source} type='video/mp4' />
      </video>
         <Slider slides={sliderData} />

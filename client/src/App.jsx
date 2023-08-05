@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import Home from './Pages/Home/Home';
 // import RegistrationForm from './components/Form/Registration.jsx'
 import Footer from './Footer/Footer';
+import Empty from './Pages/Empty/Empty';
 
 
 function App() {
@@ -34,12 +35,13 @@ function App() {
           path: '/registration',
           element: <Home />,
         },
-      ]
-    },
         {
           path: '*',
-          element: <Home/>,
+          element: <Empty/>,
         }
+      ]
+    },
+      
    
   ])
 
