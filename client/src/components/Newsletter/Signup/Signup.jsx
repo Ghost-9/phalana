@@ -10,13 +10,12 @@ import validate from '../../../hooks/validation';
 
 
 const SignUp = ({ submitForm }) => {
-    const {handleSubmit, handleChange, values, errors}  = useForm(submitForm, validate);
+    const { handleSubmit, handleChange, values, errors } = useForm(submitForm, validate);
     return (
         <form
             className='subscribe-container'
             onSubmit={handleSubmit}
-            noValidate
-        >
+            noValidate>
             <div className='subscribe-column'>
                 <h1>Never Miss Our Upcoming Experiences</h1>
                 <p>Join today to get 5% off your first registration fee. Sign up for our newsletter and receive surprise rewards.</p>
