@@ -12,9 +12,9 @@ import Newsletter from '../../components/Newsletter/Newsletter.jsx';
 
 
 import experience from '../../assets/photos/resinart/experience.jpg';
-import invite from '../../assets/photos/resinart/invite.png';
 import resinArt from '../../assets/photos/resinart/square3.jpg';
 import quiz from '../../assets/photos/resinart/quiz.jpg';
+import source from '../../assets/videos/register.mp4';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -53,6 +53,9 @@ const Home = () => {
           margin={8}
         />
       </div> : <>
+      <video autoPlay loop className='video'>
+        <source src={source} type='video/mp4' />
+     </video>
         <Slider slides={sliderData} />
         {
           showTag && <div className='tag-container'>
@@ -79,8 +82,8 @@ const Home = () => {
             <Card
               title='Resin Art Experience'
               subtitle='Enjoy hands on experience making resin art this Friendship Day'
-              to='/stores'
-              buttonText='REGISTER'
+              // to='/stores'
+              buttonText='CLOSED'
               image={resinArt}
             />
             <Card
@@ -91,7 +94,8 @@ const Home = () => {
               image={quiz}
             />
           </div>
-          <Newsletter />
+            <Newsletter />
+            {/* <Register /> */}
         </div>
       </>}
     </div>
@@ -99,3 +103,28 @@ const Home = () => {
 };
 
 export default Home
+
+
+
+const Register = () => {
+  return (
+    <div style={{height:'40vh', justifyContent:"center", alignItems:'center'}}>
+      <form className='form-group' autoComplete='off'>
+        <label htmlFor="">Name</label>
+        <input type="text" placeholder='Enter your name' required className='form-control' />
+        <br />
+        <label htmlFor="">Age</label>
+        <input type="text" placeholder='Enter your age' required className='form-control' />
+        <br />
+        <label htmlFor="">Email</label>
+        <input type="email" placeholder='Enter your email' required className='form-control' />
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'flex-start', height:'40px',width:'120px', padding:'10px', margin:'20px' }}>
+          <button type='submit' className='btn btn-primary'>Submit</button>
+        </div>
+      </form>
+    </div>
+  )
+}
+
+// export default Home

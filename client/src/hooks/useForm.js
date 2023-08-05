@@ -51,17 +51,15 @@ const useForm = (callback, validate) => {
   };
   
   const submitEmail = async (email) => { 
-    const url = "https://script.google.com/macros/s/AKfycbwFMlVXrfp9S066Od6cY__z1McPcBR-Yvv4xXA3NoIdbV0D9loX_2kiaXrN94aYc01U/exec";
+    const url = "https://script.google.com/macros/s/AKfycby_kBhmENmdZWPB2vYm_iIbVO_jFDPqzXisq2PtUYSVIk84P_TjD_mlgwOuZb0bn97T/exec";
     try {
       await fetch(url, {
-        // headers: {
-        //   'Content-Type': 'application/x-www-form-urlencoded',
-        //   'Access-Control-Allow-Origin': '*'
-        // },
-        method: 'POST',
-        body: JSON.stringify({
-          Email: email
-        })
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: "POST",
+        body: Json.stringify(email),
       },).then(response => { 
         console.log('Success!', response);
       }).catch(error => console.error('Error!', error.message));

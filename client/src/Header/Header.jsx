@@ -23,7 +23,7 @@ const Header = () => {
 
   const handleClick = () => {
     setMobileMenu(!mobileMenu);
-    if (mobileMenu === false) { onClose() } else { onOpen() }
+    // if (mobileMenu === false) { onClose() } else { onOpen() }
   };
 
   // Close mobile menu when clicking on a link

@@ -5,24 +5,24 @@ import './Panel.scss'
 const Panel = () => {
     return (
         <div className='order'>
-            <h1 className='title'>Things to Explore</h1>
-            <p className='text'>Tell us what you want to make in this resin art experience.</p>
+            <h1 className='title'>Workshop Highlights</h1>
+            <p className='text'>What you will get to experience in this workshop.</p>
             <div className='cards'>
                 <div className='card'>
                     <i className='fas fa-car fa-2x'></i>
                     <h1>Tea Coasters Art</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque accusantium unde reprehenderit.</p>
+                    <p>Tea coaster set with beautiful resin art!</p>
                 </div>
                 <div className='card'>
                     <i className='fas fa-mug-hot fa-2x'></i>
                     <h1>Mirror Art</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, possimus nemo!</p>
+                    <p>Mirror Resin Art</p>
                 </div>
-                <div className='card'>
+                {/* <div className='card'>
                     <i className='fas fa-motorcycle fa-2x'></i>
                     <h1>Material</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, possimus.</p>
-                </div>
+                </div> */}
             </div>
         </div>
     );

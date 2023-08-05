@@ -8,8 +8,6 @@ const Newsletter = () => {
     const [submitted, setSubmitted] = useState(false);
     
     const submitForm = useCallback( () => {
-  
-
             setSubmitted(true);
           }, [setSubmitted])
 
