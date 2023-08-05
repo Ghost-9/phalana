@@ -12,17 +12,21 @@ import second from '../assets/photos/resinart/2.png';
 import third from '../assets/photos/resinart/3.png';
 
 
+import firstSquare from '../assets/photos/resinart/1_square.png';
+import secondSquare from '../assets/photos/resinart/2_square.png';
+import thirdSquare from '../assets/photos/resinart/3_square.png';
+
 export const sliderData = [
     {
         landscape: first,
-        square: mainBannerSquare
+        square: firstSquare,
     },
     {
         landscape: second,
-        square: square2
+        square: secondSquare
     },
     {
         landscape: third,
-        square: square3
+        square: thirdSquare
     }
 ]
